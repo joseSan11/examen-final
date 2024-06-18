@@ -3,38 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campo de entrada numérico</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Calculadora de Números</title>
 </head>
 <body>
-    <input type="text" id="inputNumero" placeholder="Ingresa un número">
-    <button onclick="calcular()">Calcular</button>
-    <p id="resultado"></p>
-
-    <script>
-        // Obtener el elemento de entrada
-        const inputNumero = document.getElementById("inputNumero");
-        const resultado = document.getElementById("resultado");
-
-        // Agregar un evento para validar la entrada
-        inputNumero.addEventListener("input", () => {
-            const valor = inputNumero.value;
-            if (isNaN(valor)) {
-                // Si no es un número, mostrar un mensaje de error
-                inputNumero.setCustomValidity("Por favor, ingresa un valor numérico válido.");
-            } else {
-                // Si es un número, borrar el mensaje de error
-                inputNumero.setCustomValidity("");
-            }
-        });
-
-        // Función para calcular
-        function calcular() {
-            const valor = parseFloat(inputNumero.value);
-            if (!isNaN(valor)) {
-                const resultadoCalculado = valor * 2; // Ejemplo: duplicar el número
-                resultado.textContent = `El resultado es: ${resultadoCalculado}`;
-            }
-        }
-    </script>
+    <div class="container">
+        <h1>Calculadora de Números</h1>
+        <input type="number" id="numeroInput" placeholder="Introduce un número">
+        <button id="calcularButton">Calcular</button>
+        <p id="resultado"></p>
+        <p id="etiqueta1"></p>
+        <p id="etiqueta2"></p>
+        <p id="etiqueta3"></p>
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 </html>
