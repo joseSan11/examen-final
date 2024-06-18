@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const numeroInput = document.getElementById("numeroInput");
     const calcularButton = document.getElementById("calcularButton");
     const resultado = document.getElementById("resultado");
+    const anterior = document.getElementById("anterior");
+    const suma = document.getElementById("suma");
 
     calcularButton.addEventListener("click", function () {
         const numero = parseFloat(numeroInput.value);
@@ -14,10 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Realiza cálculos o muestra resultados según tus necesidades
-        // Por ejemplo:
-        const cuadrado = numero * numero;
-        resultado.textContent = `El cuadrado de ${numero} es ${cuadrado}.`;
+        
+        let sumaTotal = 0;
+        let anteriorNum = 0;
+
+        for (let i = 0; i <= numero; i++) {
+            sumaTotal += i;
+            anteriorNum = i;
+        }
+
+        resultado.textContent = `La suma de los ${numero} primeros números naturales es ${sumaTotal}.`;
+        anterior.textContent = `El número anterior a ${numero} es ${anteriorNum}.`;
+        suma.textContent = `La suma de ${numero} y ${anteriorNum} es ${sumaTotal}.`;
+
         resultado.classList.remove("error");
         numeroInput.classList.remove("error-border");
     });
